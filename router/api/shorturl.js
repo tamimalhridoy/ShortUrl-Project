@@ -1,9 +1,8 @@
 const express = require("express");
+const MakeShortUrl = require("../../controllers/makeShortUrl");
 const shortRoute = express.Router();
 
-shortRoute.post("shorturl", (req, res) => {
-  res.send("shorturl pages");
-});
+shortRoute.use("/shorturl", MakeShortUrl);
 
 
   
