@@ -11,8 +11,6 @@ const MakeShortUrl = (req, res) => {
   }
 
   const generateShortID = (characters) => {
-
-    
     let shortId = "";
     for (let i = 0; i < 6; i++) {
       const rendomIndex = Math.floor(Math.random() * characters.length);
@@ -22,9 +20,9 @@ const MakeShortUrl = (req, res) => {
     return shortId;
   };
 
-  console.log(generateShortID(url));
+  console.log();
 
-  res.send("shorturl pages");
+  res.send(generateShortID(url));
 };
 
 module.exports = MakeShortUrl;
