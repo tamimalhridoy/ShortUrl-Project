@@ -19,9 +19,6 @@ const MakeShortUrl = (req, res) => {
 
     return shortId;
   };
-
-  console.log();
-
   res.send(generateShortID(url));
 };
 
