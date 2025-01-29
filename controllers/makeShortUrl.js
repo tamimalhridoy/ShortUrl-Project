@@ -16,6 +16,8 @@ const MakeShortUrl = async (req, res) => {
     { url },
     { $set: { shortID: shorted } },
     { new: true }
+
+    /// just condison
   );
 
   if (existUrl) {
