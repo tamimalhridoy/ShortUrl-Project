@@ -4,7 +4,6 @@ const generateShortID = require("./generteShort");
 
 const MakeShortUrl = async (req, res) => {
   const { url } = req.body;
-
   if (!url) {
     return res.status(400).send({ error: "Url Is Required!" });
   }
@@ -16,13 +15,17 @@ const MakeShortUrl = async (req, res) => {
     { url },
     { $set: { shortID: shorted } },
     { new: true }
-
-    /// just condison
   );
 
-  if (existUrl) {
-    return res.send(existUrl);
-  }
+  // if (existUrl) {
+  //   return res.send(existUrl);
+  // }
+  if(existUrl){
+    return res.status(200).send({
+        message: "Short Url created successfully!",
+        longUrl: existUrl.url,
+        shortUrl: `localhost:8000/${existUrl.shortID}`
+    })
 
   const shortUrl = new shortUrlSchema({
     url: url,
