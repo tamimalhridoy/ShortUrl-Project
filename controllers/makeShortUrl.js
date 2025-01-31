@@ -16,25 +16,24 @@ const MakeShortUrl = async (req, res) => {
     { $set: { shortID: shorted } },
     { new: true }
   );
-
-  // if (existUrl) {
-  //   return res.send(existUrl);
-  // }
-  if(existUrl){
+  if (existUrl) {
     return res.status(200).send({
-        message: "Short Url created successfully!",
-        longUrl: existUrl.url,
-        shortUrl: `localhost:8000/${existUrl.shortID}`
-    })
-
+      message: "Short Url created successfully!",
+      longUrl: existUrl.url,
+      shortUrl: `localhost:3000/${existUrl.shortID}`,
+    });
+  }
   const shortUrl = new shortUrlSchema({
     url: url,
     shortID: shorted,
   });
-
   shortUrl.save();
 
-  res.send(shortUrl);
+  res.status(200).send({
+    message: "Short Url created successfully!",
+    longUrl: shortUrl.url,
+    shortUrl: `localhost:3000/${shortUrl.shortID}`,
+  });
 };
 
 module.exports = MakeShortUrl;
