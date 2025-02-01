@@ -1,6 +1,6 @@
+const generateShortID = require("../helpers/generteShort");
 const isUrlValid = require("../helpers/isUrlValid");
 const shortUrlSchema = require("../modal/shortUrlSchema");
-const generateShortID = require("./generteShort");
 
 const MakeShortUrl = async (req, res) => {
   const { url } = req.body;
