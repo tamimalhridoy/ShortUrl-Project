@@ -9,7 +9,6 @@ const RenderUrl = async (req, res) => {
     return res.status(400).send("This Page not Found!");
   }
 
-  //   res.send(existUrl);
   res.render(existUrl.url);
 };
 
