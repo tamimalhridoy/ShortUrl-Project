@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Short Url Project</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <nav>
-        <ul>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">registration</a>
-          </li>
-          <li>
-            <a href="">Login</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-semibold text-center text-blue-600 mb-6">URL Shortener</h1>
+    
+    <!-- Form Section -->
+    <form id="urlForm" class="space-y-4">
+      <div>
+        <label for="urlInput" class="block text-sm font-medium text-gray-700">Enter URL</label>
+        <input type="url" id="urlInput" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="https://example.com" required>
+      </div>
+      
+      <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Shorten URL</button>
+    </form>
+
+    <!-- Shortened URL Section -->
+    <div id="shortenedLink" class="mt-6 hidden text-center">
+      <p class="text-sm text-gray-500">Your shortened URL</p>
+      <a href="#" id="shortenedUrl" class="text-blue-600 font-medium text-lg break-words"></a>
+    </div
