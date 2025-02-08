@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>URL Shortener</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 font-sans flex items-center justify-center min-h-screen">
-  <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-semibold text-center text-blue-600 mb-6">URL Shortener</h1>
-    <!-- Form Section -->
-    <form id="urlForm" class="space-y-4">
-      <div>
-        <label for="urlInput" class="block text-sm font-medium text-gray-700">Enter URL</label>
-        <input type="url" id="urlInput" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="https://example.com" required>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Short URL Maker</title>
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Short URL</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Registration</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1>Short URL Maker</h1>
+      <form>
+        <input
+          class="long-url"
+          type="text"
+          placeholder="Paste your long URL here"
+          name="url"
+          value="<%= locals.longUrl %>"
+        />
+        <button type="submit">Generate</button>
+      </form>
+
+      <div class="short-link">
+        <p>Your Short Link:</p>
+        <div class="link">
+          <a href="" target="_blank"> </a>
+          <button>Copy</button>
+        </div>
       </div>
-      <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Shorten URL</button>
-    </form>
-    <div>
-      
+      <button>Generate New</button>
     </div>
-    <h2 class="pt-4 text-gray-600 sm:text-base md:text-xl ">ShortURL is a free tool to shorten URLs and generate short links
-      URL shortener allows to create a shortened link making it easy to share</h2>
-    <!-- Shortened URL Section -->
-    <div id="shortenedLink" class="mt-6 hidden text-center">
-      <p class="text-sm text-gray-500">Your shortened URL</p>
-      <a href="#" id="shortenedUrl" class="text-blue-600 font-medium text-lg break-words"></a>
-    </div
+    <footer>&copy; 2025 Short URL Maker. All rights reserved.</footer>
+
+    <!-- <script>
+           function copyShortLick () {
+                const shortUrl = document.querySelector('.link a').href;
+                navigator.clipboard.writeText(shortUrl)
+            };
+       
+            function backtoHome(){
+                window.location.pathname = "/"                
+            }
+    </script> -->
+  </body>
+</html>
