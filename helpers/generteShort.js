@@ -1,11 +1,14 @@
 const generateShortID = (characters) => {
-    let shortId = "";
-    for (let i = 0; i < 6; i++) {
-      const rendomIndex = Math.floor(Math.random() * characters.length);
-      shortId += characters[rendomIndex];
-    }
+  const patternCharecter =
+    "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890@#$%^%^&*";
 
-    return shortId;
-  };
+  let shortId = "";
+  for (let i = 0; i < 6; i++) {
+    const rendomIndex = Math.floor(Math.random() * characters.length);
+    shortId += characters[rendomIndex];
+  }
 
-  module.exports = generateShortID
+  return shortId;
+};
+
+module.exports = generateShortID;
