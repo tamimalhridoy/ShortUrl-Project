@@ -7,8 +7,6 @@ const generateShortID = (characters) => {
     const rendomIndex = Math.floor(Math.random() * characters.length);
     shortId += characters[rendomIndex];
   }
-const ath -[jdhdnbdhdjbdbhdbbv]
-
 
   return shortId;
 };
