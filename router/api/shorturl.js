@@ -5,19 +5,4 @@ const shortRoute = express.Router();
 
 shortRoute.use("/shorturl", MakeShortUrl);
 
-
-
-
-const amni =
-
-
-
-
-
-
-
-
-
-
-
 module.exports = shortRoute;
