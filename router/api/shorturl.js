@@ -5,6 +5,4 @@ const shortRoute = express.Router();
 
 shortRoute.use("/shorturl", MakeShortUrl);
 
-console.log(shorturl);
-
 module.exports = shortRoute;
