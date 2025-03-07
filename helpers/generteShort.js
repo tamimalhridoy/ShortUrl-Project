@@ -11,6 +11,3 @@ const generateShortID = (characters) => {
 };
 
 module.exports = generateShortID;
-
-
-const = 
