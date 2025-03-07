@@ -13,5 +13,3 @@ const RenderUrl = async (req, res) => {
 };
 
 module.exports = RenderUrl;
-
-const
